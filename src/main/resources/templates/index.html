@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="studentsApp">
+<head>
+    <title>Hello World, AngularJS</title>
+
+    <script src="./js/angular.min.js"></script>
+    <script src="./js/angular-resource.min.js"></script>
+    <script src="./js/angular-route.min.js"></script>
+    <script src="./js/app.js"></script>
+
+
+</head>
+<body>
+<div ng-controller="StudentController">
+    <button type="button" ng-click="getStudents()">Get Students</button>
+    <ul>
+        <li ng-repeat="student in students"> {{ student.firstName }} </li>
+    </ul>
+</div>
+</body>
+</html>

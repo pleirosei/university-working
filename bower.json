@@ -1,0 +1,31 @@
+{
+  "name": "spring-data-rest-angular",
+  "version": "1.00",
+  "homepage": "https://github.com/pleirosei/university",
+  "authors": [
+    "Sean Livingston <sean.livingston@nextgearcapital.com>"
+  ],
+  "description": "AngularJS Student App",
+  "keywords": [
+    "AngularJS",
+    "Spring",
+    "Boot",
+    "Maven"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.3.3",
+    "angular-route": "~1.3.3",
+    "angular-resource": "~1.3.3",
+    "angular-cookies": "~1.3.3",
+    "angular-sanitize": "~1.3.3"
+  }
+}
