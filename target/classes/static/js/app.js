@@ -1,51 +1,25 @@
-var app = angular.module('studentsApp', ['ngRoute']);
+var app = angular.module('studentsApp', ['ngResource']);
 
-
-
-
-app.controller('StudentController', ['$scope', 'dataService',
-    function ($scope, dataService) {
-        $scope.status;
-        $scope.students;
-
-        getStudents();
-
-        function getStudents() {
-            dataService.getStudents()
-                .success(function (students) {
-                    $scope.students = students;
-                })
-                .error(function (error) {
-                    $scope.status = 'Unable to load customer data: ' + error.message;
-                });
+app.factory('Student', function($resource) {
+    return $resource("/students/:id", {id: "@id"}, {
+        update: {
+            method: 'PUT'
         }
-    }
-])
+    });
+});
 
+app.controller('StudentController', function($scope, Student) {
 
+    Student.query(function(data) {
+        $scope.students = data;
+    });
 
+    Student.get({ id: 1 }, function(data) {
+        $scope.student = data;
+    });
 
-app.service('dataService', ['$http', function($http) {
-    var urlBase = '/students';
-
-    this.getStudents = function() {
-        return $http.get(urlBase);
-    };
-
-    this.getStudent = function(id) {
-        return $http.get(urlBase + '/' + id);
-    };
-
-    this.addStudent = function(student) {
-        return $http.post(student);
-    };
-
-    this.updateStudent = function(student) {
-        return $http.put(urlBase + '/' + student.id, student)
-    };
-
-    this.deleteStudent = function(id) {
-        return $http.delete(urlBase + '/' + id);
-    };
-
-}]);
+    //var student = new Student.query();
+    //
+    //$scope.students = student;
+    //console.log(student.get({'id': '1'}));
+});
