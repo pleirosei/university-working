@@ -11,24 +11,45 @@
 
 </head>
 <body>
-<div ng-controller="StudentController">
-    <h1>Students</h1>
-    <table>
-        <tr>
-            <th>Student ID</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-        </tr>
-        <tr ng-repeat="student in students">
-            <td>{{ student.id }}</td>
-            <td>{{ student.firstName }}</td>
-            <td>{{ student.lastName }}</td>
-        </tr>
 
-        <tr>
-            <td>{{ student.firstName }}  {{student.lastName}}</td>
-        </tr>
-    </table>
-</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <ul classs="nav">
+                    <li><a href="#viewStudent">View Student</a></li>
+                </ul>
+            </div>
+            <div class="col-md-9">
+                <div class="ng-view"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+<!--<div ng-controller="StudentController">-->
+    <!--<h1>Students</h1>-->
+    <!--<table>-->
+        <!--<tr>-->
+            <!--<th>Student ID</th>-->
+            <!--<th>First Name</th>-->
+            <!--<th>Last Name</th>-->
+        <!--</tr>-->
+        <!--<tr ng-repeat="student in students">-->
+            <!--<td>{{ student.id }}</td>-->
+            <!--<td>{{ student.firstName }}</td>-->
+            <!--<td>{{ student.lastName }}</td>-->
+        <!--</tr>-->
+
+        <!--<tr>-->
+            <!--<td>{{ student.firstName }}  {{student.lastName}}</td>-->
+        <!--</tr>-->
+    <!--</table>-->
+<!--</div>-->
 </body>
 </html>
